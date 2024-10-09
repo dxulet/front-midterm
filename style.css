@@ -239,7 +239,6 @@ nav #menu li a:hover {
 
 .hero-text {
   min-width: 512px;
-  text-align: left;
 }
 
 .profile-image {
@@ -260,7 +259,6 @@ nav #menu li a:hover {
 .hero h1 {
   font-weight: normal;
   font-size: 48px;
-  text-align: left;
   letter-spacing: -2px;
   line-height: 58px;
   padding-bottom: 20px;
@@ -289,6 +287,11 @@ nav #menu li a:hover {
     width: 120px;
     height: auto;
     transform: translateX(4px);
+  }
+
+  .hero-text {
+    text-align: center;
+    justify-content: center;
   }
 
   .hero h1 {
@@ -358,7 +361,7 @@ nav #menu li a:hover {
   width: 60%;
   height: auto;
   border-radius: 10px;
-  padding-left: 50px;
+  margin-left: 20px;
 }
 
 @media (max-width: 768px) {
@@ -377,6 +380,188 @@ nav #menu li a:hover {
   .fam-image {
     width: 100%;
     height: auto;
-    padding-left: 0;
+    margin-left: 0;
   }
 }
+
+.family-tree {
+    text-align: center;
+}
+
+.family-tree ul {
+    padding-top: 20px;
+    position: relative;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.family-tree ul ul {
+    margin-top: 20px;
+}
+
+.family-tree li {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    position: relative;
+    padding: 20px 5px 0 5px;
+}
+
+.family-tree li::before, .family-tree li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 2px solid #ccc;
+    width: 50%;
+    height: 20px;
+}
+
+.family-tree li::after {
+    right: auto;
+    left: 50%;
+    border-left: 2px solid #ccc;
+}
+
+.family-tree li:only-child::after, .family-tree li:only-child::before {
+    display: none;
+}
+
+.family-tree li:only-child {
+    padding-top: 0;
+}
+
+.family-tree li:first-child::before, .family-tree li:last-child::after {
+    border: 0 none;
+}
+
+.family-tree li:last-child::before {
+    border-right: 2px solid #ccc;
+    border-radius: 0 5px 0 0;
+}
+
+.family-tree li:first-child::after {
+    border-radius: 5px 0 0 0;
+}
+
+.family-tree ul ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 2px solid #ccc;
+    width: 0;
+    height: 20px;
+}
+
+.family-member-card {
+    display: inline-block;
+    background: #2c2c2c;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    max-width: 320px;
+    width: 320px;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.member-text h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.member-text p {
+    font-size: 1em;
+    font-weight: 300;
+    color: #ccc;
+    text-align: left;
+    line-height: 36px;
+    margin-top: 10px;
+}
+
+.member-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 auto;
+}
+
+.member-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Updated styles for devices with max-width 768px */
+@media (max-width: 768px) {
+    .family-tree ul {
+        padding-left: 0;
+    }
+
+    .family-tree li {
+        display: block;
+        margin: 0 auto;
+        padding: 20px 0;
+    }
+
+    .family-tree li::before, .family-tree li::after {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-top: 2px solid #ccc;
+        width: 2px;
+        height: 20px;
+    }
+
+    .family-tree li:only-child::after, .family-tree li:only-child::before {
+        display: none;
+    }
+
+    .family-tree ul ul::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        border-left: 2px solid #ccc;
+        width: 0;
+        height: 20px;
+    }
+
+    .family-member-card {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .member-text h3 {
+        font-size: 1.5em;
+    }
+
+    .member-text p {
+        line-height: 24px;
+        font-size: 0.9em;
+    }
+} 
+
+/* Additional Styles for better mobile connection lines */
+@media (max-width: 768px) {
+    .family-tree li::before {
+        top: -30px;
+        border-left: 2px solid #ccc;
+        height: 30px;
+    }
+
+    .family-tree li::after {
+        display: none;
+    }
+
+    .family-tree ul ul::before {
+        top: -10px;
+        height: 30px;
+    }
+} 
