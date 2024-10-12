@@ -748,12 +748,22 @@ nav #menu li a:hover {
     margin-left: -6px; 
 }
 
+.timeline-entry::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 22px;
+    background-color: #007bff;
+    top: 49px;
+    left: 8px;
+}
+
 .timeline-content {
     padding: 20px;
     background: #222;
     border-radius: 8px;
     position: relative;
-    margin-left: 40px;
+    margin-left: 30px;
     border-left: 4px solid #007bff;
 }
 
@@ -833,6 +843,10 @@ nav #menu li a:hover {
     .timeline::after,
     .timeline-entry::before {
         left: 10px;
+    }
+
+    .timeline-entry::after {
+        left: 20px;
     }
 
     .timeline-content {
