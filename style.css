@@ -692,8 +692,13 @@ nav #menu li a:hover {
     box-sizing: border-box;
 }
 
-.education, .experience {
+.education {
     padding: 50px 50px 0 0; 
+    box-sizing: border-box;
+}
+
+.experience {
+    padding: 50px 0 0 0;
     box-sizing: border-box;
 }
 
@@ -741,7 +746,7 @@ nav #menu li a:hover {
     height: 16px;
     left: 0; 
     background-color: #ccc;
-    border: 3px solid #007bff;
+    border: 3px solid #d35400;
     top: 42px;
     border-radius: 50%;
     z-index: 1;
@@ -753,7 +758,7 @@ nav #menu li a:hover {
     position: absolute;
     height: 3px;
     width: 22px;
-    background-color: #007bff;
+    background-color: #d35400;
     top: 49px;
     left: 8px;
 }
@@ -764,7 +769,7 @@ nav #menu li a:hover {
     border-radius: 8px;
     position: relative;
     margin-left: 30px;
-    border-left: 4px solid #007bff;
+    border-left: 4px solid #d35400;
 }
 
 .timeline-content .company {
@@ -804,13 +809,20 @@ nav #menu li a:hover {
 
 
 .timeline-content span {
-    color: #007bff;
+    color: #d35400;
 }
 
 .timeline-content p {
     margin-bottom: 0;
     color: #bbbbbb;
     font-size: 12px;
+}
+
+.timeline-content strong {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 /* List Styling */
@@ -882,6 +894,13 @@ nav #menu li a:hover {
     text-align: center;
 }
 
+.skill-card:hover {
+    background-color: #333;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
 .skill-card span {
     font-size: 16px;
     font-weight: bold;
@@ -890,7 +909,7 @@ nav #menu li a:hover {
 
 .skill-card small {
     font-size: 12px;
-    color: #007bff;
+    color: #d35400;
     margin-top: 5px;
 }
 
@@ -942,7 +961,7 @@ h6 {
 }
 
 .hobbie1 {
-    background: url(img/diving.jpg) no-repeat 50% 50%;
+    background: url(img/interests/diving.jpg) no-repeat 50% 50%;
     background-size: cover;
 }
 
@@ -960,7 +979,7 @@ h6 {
 }
 
 .hobbie2 {
-    background: url(img/horse.JPG) no-repeat 50% 80%;
+    background: url(img/interests/horse.jpg) no-repeat 50% 80%;
     background-size: 100% auto;
 }
 
@@ -979,7 +998,7 @@ h6 {
 }
 
 .hobbie3 {
-    background: url(img/golf.jpg) no-repeat 50% 50%;
+    background: url(img/interests/golf.jpg) no-repeat 50% 50%;
     background-size: cover;
 }
 
@@ -997,7 +1016,7 @@ h6 {
 }
 
 .hobbie4 {
-    background: url(img/snowboarding.jpg) no-repeat 50% 50%;
+    background: url(img/interests/snowboarding.jpg) no-repeat 50% 50%;
     background-size: cover;
 }
 
@@ -1026,5 +1045,78 @@ h6 {
 
     .hobbie1::after, .hobbie2::after, .hobbie3::after, .hobbie4::after {
           display: none;
+    }
+}
+
+/*--------------- contact form --------------- */
+
+#contact-form {
+    margin: 5% 1.4%;
+}
+
+#contact-form ul {
+    list-style: none;
+    border-radius: 5px;
+    margin-bottom: 40px;
+}
+
+#contact-form li {
+    padding: 10px;
+}
+
+#contact-form li:last-of-type {
+    border-bottom: none;
+}
+
+#contact-form label {
+    display: block;
+    font-size: .8em;
+    color: #999;
+    padding-left: 5px;
+}
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    resize: vertical;
+    background: transparent;
+    color: #fff;
+    font-weight: bolder;
+}
+
+input:focus {
+    outline: none;
+    border: none;
+}
+
+textarea:focus {
+    outline: none;
+    border: none;
+}
+
+.textarea {
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.send {
+    margin-left: 50px;
+    text-transform: uppercase;
+    padding: 20px 30px;
+    background: transparent;
+    color: #dfdfdf;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.send:hover {
+    background: #dfdfdf;
+    color: #101010;
+}
+
+@media(max-width: 768px) {
+    #contact-form {
+          margin: 5% -8%;
+          width: 98%;
     }
 }
